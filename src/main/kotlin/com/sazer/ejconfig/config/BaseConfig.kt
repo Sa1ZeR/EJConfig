@@ -12,8 +12,6 @@ abstract class BaseConfig {
 
     constructor(file: Path) {
         this.file = file
-
-        init()
     }
 
     constructor(file: Path, parent: Path) : this(parent.resolve(file)) {
@@ -22,8 +20,6 @@ abstract class BaseConfig {
     constructor(fileName: String) : this(Paths.get(fileName)) {
 
     }
-
-    abstract fun init();
 
     abstract fun getMapper(): ObjectMapper
 

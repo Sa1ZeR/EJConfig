@@ -9,20 +9,21 @@ import java.nio.file.Path
 
 class YamlConfig : BaseConfig {
 
-    private lateinit var mapper: ObjectMapper
+    private var mapper: ObjectMapper? = null
 
     constructor(file: Path) : super(file)
     constructor(file: Path, parent: Path) : super(file, parent)
     constructor(fileName: String) : super(fileName) {
     }
 
-    override fun init() {
+    override fun getMapper(): ObjectMapper {
+        if(mapper == null) {
             mapper = ObjectMapper(YAMLFactory())
-            mapper.registerKotlinModule()
-            mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+            mapper?.registerKotlinModule()
+            mapper?.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
             //mapper.disable(YAMLGenerator.Feature.WRITE_DOC_START_MARKER)
+        }
+        return mapper!!
     }
-
-    override fun getMapper(): ObjectMapper = mapper
 
 }
