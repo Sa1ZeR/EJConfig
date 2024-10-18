@@ -2,9 +2,8 @@ package com.sazer.ejconfig.config
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
-import com.fasterxml.jackson.module.kotlin.KotlinModule
 import com.fasterxml.jackson.module.kotlin.registerKotlinModule
+import com.sazer.ejconfig.config.printer.JsonPrettyPrinter
 import java.nio.file.Path
 class JsonConfig : BaseConfig {
 
@@ -17,7 +16,9 @@ class JsonConfig : BaseConfig {
     override fun getMapper(): ObjectMapper {
         if (mapper == null) {
             mapper = ObjectMapper()
+            mapper?.enable(SerializationFeature.INDENT_OUTPUT);
             mapper?.registerKotlinModule()
+            mapper?.setDefaultPrettyPrinter(JsonPrettyPrinter())
         }
 
         return mapper!!
