@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test
 class ConfigWrapperTest {
 
     @Test
-    fun wrapConfig() {
+    fun of() {
         val config = SimpleConfig()
 
-        val wrapConfig = ConfigWrapper.wrapConfig("testing/config.yml", config)
+        val wrapConfig = ConfigWrapper.of("testing/config.yml", config)
 
         println(wrapConfig)
     }
@@ -18,7 +18,7 @@ class ConfigWrapperTest {
     fun wrapJsonConfig() {
         val config = SimpleConfig()
 
-        val wrapConfig = ConfigWrapper.wrapConfig("testing/config.json", config)
+        val wrapConfig = ConfigWrapper.of("testing/config.json", config)
 
         println(wrapConfig)
     }
