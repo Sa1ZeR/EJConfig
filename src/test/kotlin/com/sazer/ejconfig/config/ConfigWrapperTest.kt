@@ -11,7 +11,7 @@ class ConfigWrapperTest {
 
         val wrapConfig = ConfigWrapper.of("testing/config.yml", config)
 
-        println(wrapConfig)
+        println(wrapConfig.getConfig())
     }
 
     @Test
@@ -19,6 +19,25 @@ class ConfigWrapperTest {
         val config = SimpleConfig()
 
         val wrapConfig = ConfigWrapper.of("testing/config.json", config)
+
+        println(wrapConfig.getConfig())
+    }
+
+    @Test
+    fun save() {
+        val config = SimpleConfig()
+
+        val wrapConfig = ConfigWrapper.of("testing/save.yml", config)
+
+        val config1 = wrapConfig.getConfig()
+        config1.name = "awdawdadwawdwad"
+        config1.bool = false
+        config1.number = 11
+        config1.list.add("111")
+        config1.list.add("7")
+        config1.list.add("5")
+
+        wrapConfig.save()
 
         println(wrapConfig)
     }
