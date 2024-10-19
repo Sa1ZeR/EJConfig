@@ -5,6 +5,7 @@ import com.sazer.ejconfig.exception.ConfigException
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
+import java.nio.file.StandardOpenOption
 
 abstract class BaseConfig {
 
@@ -46,13 +47,16 @@ abstract class BaseConfig {
         return getMapper().readValue(file.toFile(), klass)
     }
 
-    fun toFile(obj: Any) {
+    fun toFile(obj: Any, rewrite: Boolean = false) {
         if(!isExists()) {
             createFile()
         }
 
         val data = getMapper().writeValueAsString(obj)
-        Files.writeString(file, data)
+
+        if(rewrite)
+            Files.writeString(file, data, StandardOpenOption.TRUNCATE_EXISTING)
+        else Files.writeString(file, data)
     }
 
     fun <T> readOrCreate(obj: T): T {
