@@ -1,4 +1,4 @@
-package com.sazer.ejconfig.config
+package com.sa1zer.ejconfig.config
 
 enum class ConfigType {
 

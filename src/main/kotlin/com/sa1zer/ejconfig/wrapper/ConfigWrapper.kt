@@ -1,10 +1,10 @@
-package com.sazer.ejconfig.wrapper
+package com.sa1zer.ejconfig.wrapper
 
-import com.sazer.ejconfig.config.BaseConfig
-import com.sazer.ejconfig.config.ConfigType
-import com.sazer.ejconfig.config.JsonConfig
-import com.sazer.ejconfig.config.YamlConfig
-import com.sazer.ejconfig.utils.FileUtils
+import com.sa1zer.ejconfig.config.BaseConfig
+import com.sa1zer.ejconfig.config.ConfigType
+import com.sa1zer.ejconfig.config.JsonConfig
+import com.sa1zer.ejconfig.config.YamlConfig
+import com.sa1zer.ejconfig.utils.FileUtils
 import java.io.File
 import java.nio.file.Path
 import java.nio.file.Paths

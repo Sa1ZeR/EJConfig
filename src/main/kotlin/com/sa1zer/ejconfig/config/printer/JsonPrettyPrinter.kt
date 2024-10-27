@@ -1,4 +1,4 @@
-package com.sazer.ejconfig.config.printer
+package com.sa1zer.ejconfig.config.printer
 
 import com.fasterxml.jackson.core.util.DefaultIndenter
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter

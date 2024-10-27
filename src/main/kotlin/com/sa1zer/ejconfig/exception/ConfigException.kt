@@ -1,4 +1,4 @@
-package com.sazer.ejconfig.exception
+package com.sa1zer.ejconfig.exception
 
 import java.io.IOException
 

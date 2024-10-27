@@ -1,7 +1,7 @@
-package com.sazer.ejconfig.config
+package com.sa1zer.ejconfig.config
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.sazer.ejconfig.exception.ConfigException
+import com.sa1zer.ejconfig.exception.ConfigException
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths

@@ -1,7 +1,7 @@
-package com.sazer.ejconfig.utils
+package com.sa1zer.ejconfig.utils
 
-import com.sazer.ejconfig.config.ConfigType
-import com.sazer.ejconfig.exception.ConfigException
+import com.sa1zer.ejconfig.config.ConfigType
+import com.sa1zer.ejconfig.exception.ConfigException
 import java.io.File
 
 object FileUtils {
