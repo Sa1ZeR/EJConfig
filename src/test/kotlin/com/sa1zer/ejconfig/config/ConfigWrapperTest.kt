@@ -1,6 +1,6 @@
-package com.sazer.ejconfig.config
+package com.sa1zer.ejconfig.config
 
-import com.sazer.ejconfig.wrapper.ConfigWrapper
+import com.sa1zer.ejconfig.wrapper.ConfigWrapper
 import org.junit.jupiter.api.Test
 
 class ConfigWrapperTest {

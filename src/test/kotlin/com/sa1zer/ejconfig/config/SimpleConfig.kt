@@ -1,4 +1,4 @@
-package com.sazer.ejconfig.config
+package com.sa1zer.ejconfig.config
 
 data class SimpleConfig(
     var name: String = "TestVal",
