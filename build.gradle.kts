@@ -2,13 +2,13 @@ import org.gradle.jvm.tasks.Jar
 
 plugins {
     id("com.github.johnrengelman.shadow") version "8.1.0"
-    kotlin("jvm") version "2.0.0"
+    kotlin("jvm") version "1.8.21"
     application
     `maven-publish`
 }
 
 group = "com.sa1zer"
-version = "1.3.0"
+version = "1.3.1"
 
 repositories {
     mavenCentral()
