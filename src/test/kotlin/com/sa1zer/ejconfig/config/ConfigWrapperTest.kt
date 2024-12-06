@@ -24,6 +24,16 @@ class ConfigWrapperTest {
     }
 
     @Test
+    fun wrapJsonOldConfig() {
+        val config = SimpleOldConfig()
+
+        val wrapConfig = ConfigWrapper.of("testing/config_old.yml", config)
+        wrapConfig.save()
+
+        println(wrapConfig.getConfig())
+    }
+
+    @Test
     fun save() {
         val config = SimpleConfig()
 

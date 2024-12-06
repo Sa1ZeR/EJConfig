@@ -1,5 +1,6 @@
 package com.sa1zer.ejconfig.config
 
+import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.module.kotlin.registerKotlinModule
@@ -19,6 +20,7 @@ class JsonConfig : BaseConfig {
             mapper?.enable(SerializationFeature.INDENT_OUTPUT);
             mapper?.registerKotlinModule()
             mapper?.setDefaultPrettyPrinter(JsonPrettyPrinter())
+            mapper?.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
         }
 
         return mapper!!

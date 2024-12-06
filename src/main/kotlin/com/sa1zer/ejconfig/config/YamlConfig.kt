@@ -1,5 +1,6 @@
 package com.sa1zer.ejconfig.config
 
+import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
@@ -21,6 +22,7 @@ class YamlConfig : BaseConfig {
             mapper = ObjectMapper(YAMLFactory())
             mapper?.registerKotlinModule()
             mapper?.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+            mapper?.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
             //mapper.disable(YAMLGenerator.Feature.WRITE_DOC_START_MARKER)
         }
         return mapper!!
